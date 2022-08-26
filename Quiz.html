@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MCQ Exam Quiz</title>
+<!--------------------------------------------------->
+<!--------------------- BOOTSTRAP 4 ----------------->
+<!--------------------------------------------------->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!--------------------------------------------------->
+<!--------------------- Inline CSS  ----------------->
+<!--------------------------------------------------->
+
+<style type="text/css">
+
+.Q-Ans {
+	border: 0;
+	margin: 2rem 0;
+}
+
+.Q-Ans legend {
+	font-weight: 700;
+}
+
+.Answer-of-quetion {
+    background-color: red;
+    color: white;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+	margin: 0.25rem 0;
+}
+
+/* Hide Radio Buttons and Submit Button */
+input[type="radio"], button {
+  display: none;
+}
+
+/* Wrong Answer slection, highlight in gray */
+:valid .Correct-Answer { background-color: rgba(01, 11, 4, 0.4) }
+
+/* Show any extra explanatory text */
+.answer__reveal-text { display: none; }
+:valid .answer__reveal-text { display: block }
+
+
+
+/* Correct Answer highlight in yellow */
+:checked + .Correct-Answer {color: black; background-color: yellow; }
+
+
+
+/* prevent chosing another answer once chosen */
+:valid { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none }
+:valid + .Answer-of-quetion { pointer-events: none }
+
+/* keep track of score */
+form { counter-reset: quiz-score }
+:checked + .Correct-Answer { counter-increment: quiz-score }
+.score:after { content: counter(quiz-score) "/" attr(data-question-count) }
+
+/* show score once quiz has been completed */
+.message { display: none; }
+form:valid .message { display: block }
+	
+</style>
+
+
+
+</head>
+<body>
+
+<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& HEADING  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+<div class="jumbotron text-center">
+  <h4>MCQ Quiz Exam</h4>
+  <p>By Ritesh Gorle</p>
+ </div>
+
+<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& MCQ START  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+<form method="POST" class="is-not-results container">
+
+<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& MCQ 01  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+	<fieldset class="Q-Ans" >
+		<legend>Question 1 : Patanjali is well known for the compilation of –</legend>
+		<div class="answers">
+			<div class="answer">
+				<input type="radio" name="answers[0]" id="answer-0-1" value="1" required>
+				<label for="answer-0-1" class="Answer-of-quetion Correct-Answer">
+                    Yoga Sutra 
+                    <span class="answer__reveal-text ">This Answer is Correct.</span>
+        </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[0]" id="answer-0-2" value="2" required>
+				<label for="answer-0-2" class="Answer-of-quetion">
+                    Panchatantra
+                    </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[0]" id="answer-0-3" value="3" required>
+				<label for="answer-0-3" class="Answer-of-quetion">
+                    Answer 3
+                </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[0]" id="answer-0-4" value="4" required>
+				<label for="answer-0-4" class="Answer-of-quetion">
+                    Brahma Sutra
+                </label>
+			</div>
+		</div>
+	</fieldset>
+
+<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& MCQ 02  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+
+	<fieldset class="Q-Ans">
+		<legend>Question 2 : The hottest planet in the solar system?</legend>
+		<div class="answers">
+			<div class="answer">
+				<input type="radio" name="answers[1]" id="answer-1-1" value="1" required>
+				<label for="answer-1-1" class="Answer-of-quetion">
+                    Mercury 
+                </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[1]" id="answer-1-2" value="2" required>
+				<label for="answer-1-2" class="Answer-of-quetion">
+                    Mars
+                </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[1]" id="answer-1-3" value="3" required>
+				<label for="answer-1-3" class="Answer-of-quetion Correct-Answer">
+                    Venus
+                    <span class="answer__reveal-text">This Answer is Correct.</span>
+        </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[1]" id="answer-1-4" value="4" required>
+				<label for="answer-1-4" class="Answer-of-quetion">
+                    Jupiter
+                </label>
+			</div>
+		</div>
+	</fieldset>
+  
+ <!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& MCQ 03  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+ 
+    <fieldset class="Q-Ans">
+		<legend>Question 3 : Which one of the following ports is the oldest port in India?</legend>
+		<div class="answers">
+			<div class="answer">
+				<input type="radio" name="answers[2]" id="answer-2-1" value="1" required>
+				<label for="answer-1-1" class="Answer-of-quetion">
+                    Mumbai Port 
+                </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[2]" id="answer-2-2" value="2" required>
+				<label for="answer-2-2" class="Answer-of-quetion">
+                   Kolkata Port
+                </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[2]" id="answer-2-3" value="3" required>
+				<label for="answer-2-3" class="Answer-of-quetion Correct-Answer">
+                    Chennai Port
+                    <span class="answer__reveal-text">This Answer is Correct.</span>
+        </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[2]" id="answer-2-4" value="4" required>
+				<label for="answer-2-4" class="Answer-of-quetion">
+                     Vishakhapatnam Port
+                </label>
+			</div>
+		</div>
+	</fieldset>
+
+<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& MCQ 04  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+
+<fieldset class="Q-Ans">
+		<legend>Question 4 : Which of the following is not a nuclear power center?</legend>
+		<div class="answers">
+			<div class="answer">
+				<input type="radio" name="answers[3]" id="answer-3-1" value="1" required>
+				<label for="answer-3-1" class="Answer-of-quetion">
+                    Narora
+                </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[3]" id="answer-3-2" value="2" required>
+				<label for="answer-3-2" class="Answer-of-quetion">
+                   Kota
+                </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[3]" id="answer-3-3" value="3" required>
+				<label for="answer-3-3" class="Answer-of-quetion Correct-Answer">
+                    Chamera
+                    <span class="answer__reveal-text">This Answer is Correct.</span>
+        </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[3]" id="answer-3-4" value="4" required>
+				<label for="answer-3-4" class="Answer-of-quetion">
+                      Kakrapara
+                </label>
+			</div>
+		</div>
+	</fieldset>
+
+<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& MCQ 05  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+
+<fieldset class="Q-Ans">
+		<legend>Question 5 : First Afghan War took place in</legend>
+		<div class="answers">
+			<div class="answer">
+				<input type="radio" name="answers[4]" id="answer-4-1" value="1" required>
+				<label for="answer-4-1" class="Answer-of-quetion">
+                   1833
+                </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[4]" id="answer-4-2" value="2" required>
+				<label for="answer-4-2" class="Answer-of-quetion">
+                   1843
+                </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[4]" id="answer-4-3" value="3" required>
+				<label for="answer-4-3" class="Answer-of-quetion Correct-Answer">
+                    1839
+                    <span class="answer__reveal-text">This Answer is Correct.</span>
+        </label>
+			</div>
+			<div class="answer">
+				<input type="radio" name="answers[4]" id="answer-4-4" value="4" required>
+				<label for="answer-4-4" class="Answer-of-quetion">
+                     1848
+                </label>
+			</div>
+		</div>
+	</fieldset>
+
+<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& SUBMIT  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+
+	<button type="submit">Submit answers</button>
+
+<!--&&&&&&&&&&&&&&&&&&&&&&&&&&&& SCORE  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&-->
+<div class="message">
+		<p>Your Score: <span class="score" data-question-count="5"></span></p>
+	</div>
+</form>
+
+	
+</body>
+</html>
